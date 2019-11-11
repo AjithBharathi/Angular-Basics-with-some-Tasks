@@ -1,0 +1,58 @@
+<div class="section1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <ul class="list-group">
+            <li class="list-group-item"> 
+              Target : {{targetscore}}
+            </li>
+            <li class="list-group-item">
+              Total : {{totalscore}}/{{twic}}
+            </li>
+          </ul>
+        </div>
+      </div>
+  
+      <div class="form-check" >
+        <label [class.opac]="butDisabled1" class="form-check-label" id=wic1>
+          <input class="form-check-input dhoni" 
+          type="radio" [(ngModel)]="exampleRadios" [class.opac]="butDisabled1" [disabled]="butDisabled1" id="exampleRadios1" value="option1" >
+          Dhoni : {{ dscore}}
+        </label>
+      </div>
+      <div *ngIf="player2"  class="form-check">
+        <label [class.opac]="butDisabled2" class="form-check-label">
+          <input class="form-check-input" 
+          type="radio" [(ngModel)]="exampleRadios" [class.opac]="butDisabled2" [disabled]="butDisabled2" id="exampleRadios2" value="option2">
+          Raina : {{rscore}}
+        </label>
+      </div>
+      <div class="form-check">
+        <label [class.opac]="butDisabled3" class="form-check-label">
+          <input class="form-check-input" 
+          type="radio" [(ngModel)]="exampleRadios" [class.opac]="butDisabled3"  (blur)="butDisabled3" [disabled]="butDisabled3" id="exampleRadios3" value="option3">
+          Kholi : {{kscore}}
+        </label>
+      </div><br>
+      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+          <div class="btn-group mr-2" role="group" aria-label="First group">
+            <button type="button" [disabled]="offbutton" class="btn btn-secondary" name="one" 
+            value="1" (click)="score(1)">1</button>
+            <button type="button" [disabled]="offbutton" class="btn btn-secondary" name="two" 
+            value="2" (click)="score(2)">2</button>
+            <button type="button" [disabled]="offbutton" class="btn btn-secondary" name="three" 
+            value="3" (click)="score(3)">3</button>
+            <button type="button" [disabled]="offbutton" class="btn btn-secondary" name="four" 
+            value="4" (click)="score(4)">4</button>
+            <button type="button" [disabled]="offbutton" class="btn btn-secondary" name="five" 
+            value="5" (click)="score(5)">5</button>
+            <button type="button" [disabled]="offbutton" class="btn btn-secondary" name="six" 
+            value="6" (click)="score(6)">6</button>
+            <button type="button" [disabled]="offbutton" class="btn btn-danger" (click)="wicket()">OUT</button>
+          </div>
+         
+        </div>
+          <div [class.congrats]="qwer"></div>
+    </div>
+  </div>
+  

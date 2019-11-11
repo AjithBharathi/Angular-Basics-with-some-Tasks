@@ -1,0 +1,69 @@
+<div class="container-fluid">
+  <!-- one way data binding -->
+  <!-- 1.string Interpolation -->
+  <div class="container">
+    <h3>String Interpolation</h3>
+    <p>{{Name}}</p>
+    <p>1+1 = {{1+1}}</p>
+    <p>{{returnString()}}</p>
+    <p>{{'whatever inside the quotes displays the same'}}</p><hr>
+    <div>
+      <h5>using string interpolation to display image</h5>
+      <img src={{imageUrl}} alt="angular-card">
+    </div><hr>
+    <h5>string Interpolation with array elements</h5>
+    <ul>
+      <li>{{GOTCharacter[0]}}</li>
+      <li>{{GOTCharacter[1]}}</li>
+      <li>{{GOTCharacter[2]}}</li>
+    </ul>
+  </div>
+  <hr>
+
+  <!-- 2.property binding -->
+  <div class="container">
+    <h3>Property Binding</h3>
+    <div>
+      <h5>this normal image display method</h5>
+      <img src="../../../assets/angular-card.png" alt="angular-card">
+      <hr>
+    </div>
+    <div>
+      <!-- [] - this is the syntax of the property binding -->
+      <!-- imageUrl - is property name -->
+      <h5>this is displayed by property binding => [src]</h5>
+      <img [src]="imageUrl" alt="angular-card">
+    </div>
+    <div>
+      <!-- property binding in input field -->
+      <h5>property binding used in input field</h5>
+      <input type='text' [value]='inputProperty' name="" value="">
+      {{inputProperty}}
+    </div>
+  </div>
+  <hr>
+  <!-- 3.event binding -->
+  <div>
+    <h3>event binding - click binding</h3>
+    <p>{{clickevent}}</p>
+    <button type="button" class="btn btn-info" (click)="eventChange()">change</button>
+    <hr>
+    <h5>string Interpolation with array elements using click events</h5>
+    <ul>
+      <li>{{GOTCharacter_click_fn[0]}}</li>
+      <li>{{GOTCharacter_click_fn[1]}}</li>
+      <li>{{GOTCharacter_click_fn[2]}}</li>
+    </ul>
+    <button type="button" class="btn btn-info" (click)="switchButton()">change</button>
+    <button type="button" class="btn btn-danger" [disabled]='stopSwitchStatus' (click)="switchoffButton()">stop</button>
+    <!-- this type of disable is also possible for static -->
+    <button type="button" class="btn btn-danger" disabled='true' (click)="switchoffButton()">stop</button>
+  </div><hr>
+  <!-- 4.two way data binding -->
+  <div class="container">
+      <input type='text' [(ngModel)]="twoWay">
+      
+    <p>this is  {{twoWay}}</p>
+  </div>
+</div>
+<app-childcomponent [imageUrlChild]="imageUrl"></app-childcomponent>

@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <h1>ATTRIBUTE DIRECTIVE</h1>
+  <div class="container">
+    <h3>NgStyle</h3>
+    <ul [ngStyle]="myStyle">
+      <li>Batman</li>
+      <li>Superman</li>
+      <li>Wonder Woman</li>
+      <li>Flash</li>
+    </ul>
+    <button class="btn btn-primary" (click)="setStyle()">change style</button>
+  </div><hr>
+  <div class="container">
+    <h3>NgClass</h3>
+    <h5 [ngClass]="currentCSSClass">change css class dynamically</h5>
+    <button class="btn btn-primary" (click)="setCSSClass()">change css class</button>
+  </div><hr>
+  <div class="container">
+    <h3>NgModel</h3>
+    <h5 [style.color]="inputColor">change text color using NgModel</h5>
+    <input type="text" [(ngModel)]="inputColor" placeholder="type the color name">
+  </div>
+</div>

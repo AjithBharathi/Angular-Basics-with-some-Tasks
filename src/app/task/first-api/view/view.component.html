@@ -1,0 +1,9 @@
+<ul>
+    <li *ngFor="let data of ( outputs ? outputs.splice(0,3) : [])">
+        <p style="color:red">{{data.id}}</p>
+        <p style="color:rgb(5, 70, 9)">{{data.title}} </p>
+        <p style="color:rgb(17, 0, 255)">{{data.body}}</p>
+    </li>
+</ul>
+
+<button routerLink="/postcomponent">Next</button>

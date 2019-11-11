@@ -1,0 +1,8 @@
+<input type="text" [(ngModel)]='title' />
+<input type="text" #body />
+<input type="text" #user />
+
+<button (click)='post(body.value,user.value)'>Post</button>
+
+<button routerLink="/viewcomponent">back</button>
+<p let *ngFor="let det of detail">name={{det.name}}{{det.age}}{{det.degree}}</p>

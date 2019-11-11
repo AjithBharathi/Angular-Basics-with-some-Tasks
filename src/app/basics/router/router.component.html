@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="container">
+    <h3>Without using routerLink, it directly applied as 'href'</h3>
+    <p>when we are clicking, it reloads the entire page</p>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Router</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="/">Home</a>
+          <a class="nav-item nav-link" href="blog">Blog</a>
+          <a class="nav-item nav-link" href="about">About</a>
+        </div>
+      </div>
+    </nav>
+  </div><hr>
+  
+  <div class="container">
+    <h3>Using routerLink</h3>
+    <p>when we are clicking, it doesn't reloads the page</p>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Router</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a routerLinkActive="active" [routerLinkActiveOptions]='{exact: true}' class="nav-item nav-link" routerLink="/">Home</a>
+            <a routerLinkActive="active" class="nav-item nav-link" routerLink="/blog">Blog</a>
+            <a routerLinkActive="active" class="nav-item nav-link" routerLink="/about">About</a>
+          </div>
+        </div>
+      </nav>
+  </div><hr>
+  <div class="container">
+    <h2>Place for the Routed Component:</h2>
+    <router-outlet></router-outlet>
+  </div>
+</div>

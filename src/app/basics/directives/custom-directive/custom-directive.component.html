@@ -1,0 +1,9 @@
+<div class="container-fluid">
+  <h1>CUSTOM DIRECTIVE</h1>
+  <div class="container">
+    <h5>Here custom directive applied to change the style</h5>
+    <div class="" *ngFor="let hero of dcHeroes; let i=index" appCustomDirective bgColor='blue'>
+        {{i+1}}. {{hero}}
+      </div>
+  </div>
+</div>

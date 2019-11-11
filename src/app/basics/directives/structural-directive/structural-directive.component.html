@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <h1>STRUCTURAL DIRECTIVES</h1>
+    <div class="container">
+      <h3>NgFor</h3>
+        <div class="" *ngFor="let hero of dcHeroes">
+          {{hero}}
+        </div><hr>
+        <h5>ng for with index values</h5>
+        <div class="" *ngFor="let hero of dcHeroes; let i=index">
+          {{i+1}}. {{hero}}
+        </div>
+    </div><hr>
+    <div class="container">
+      <h3>NgIf</h3>
+      <button type="button" class="btn btn-primary" (click)="toggleHero()">Toggle Heroes</button>
+      <div class="" *ngIf="toogleHeroFlag">
+        <div class="" *ngFor="let hero of dcHeroes; let i=index">
+          {{i+1}}. {{hero}}
+        </div>
+      </div>
+    </div><hr>
+    <div class="container">
+      <h3>NgSwitch</h3>
+      <div [ngSwitch]="selectedHero">
+        <div *ngSwitchCase="dcHeroes[0]">Bruce Wayne</div>
+        <div *ngSwitchCase="'Superman'">Clarke Kent</div>
+        <div *ngSwitchCase="'Wonder Woman'">Princess Diana</div>
+        <div *ngSwitchCase="'Flash'">Barry Allen</div>
+        <div *ngSwitchDefault>None of the heroes have been selected</div>
+      </div>
+      <div class="" *ngFor="let hero of dcHeroes; let i=index" (click)="selectHero(hero)">
+        {{i+1}}. {{hero}}
+      </div>
+    </div>
+  
+  </div>
+  
